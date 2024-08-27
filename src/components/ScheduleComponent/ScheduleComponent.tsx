@@ -4,7 +4,7 @@ import './globals.css'
 import { useEffect, useState } from 'react';
 
 export default function ScheduleComponents(){
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<any[]>([]);
 
     useEffect(() => {
     const appointments = [{
