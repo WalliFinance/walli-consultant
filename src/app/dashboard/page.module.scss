@@ -1,0 +1,78 @@
+$border-titles:#FFFFFF;
+$active-menu-and-tooltip-border:#FFAFCC;
+$cardbg-inputbg:#212529;
+$cardborder:#495057;
+$balance-sucess:#80ED99;
+$taskday-warning:#C1121F;
+$normalday:#540B0E;
+$asidebg:#003049;
+$headerbg-menudisable:#669BBC;
+$titles-label:#000000;
+$bg-button:#BBD0FF;
+$mainbg:#DEE2E6;
+$text-input:#F16C6C;
+$alert:#FFD900;
+
+@font-face {
+  font-family: 'Titles';
+  src: url('../../../public/fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Labels';
+  src: url('../../../public/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lis-R';
+  src: url('../../../public/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lis-S';
+  src: url('../../../public/fonts/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Textts';
+  src: url('../../../public/fonts/Alegreya-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Button';
+  src: url('../../../public/fonts/Merriweather-Bold.ttf');
+}
+
+.main{
+    display: flex;
+    gap: 400px;
+
+        article{
+            background-color: $cardbg-inputbg;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            padding: 12px;
+            text-transform: uppercase;
+            width: 200px;
+            border: 4px solid $cardborder;
+            border-radius: 12px;
+
+            h3{
+                color: $border-titles;
+                font-family: 'Titles';
+            }
+
+            p{
+            font-family: 'Titles';
+            font-size: 2rem;
+            color: $balance-sucess;
+            }
+        }
+
+        article:nth-child(2){
+            width: 860px;
+            height: max-content;
+        }
+}
