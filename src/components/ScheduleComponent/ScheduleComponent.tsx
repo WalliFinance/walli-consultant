@@ -11,14 +11,16 @@ export default function ScheduleComponents(){
         async function recoverAllSchedulesAndPrint(){
         const recoverDb = await recoverSchedules()
         const finishDb = []
-        for(let i =0; i<recoverDb?.length;i++){
-            finishDb.push({
-                Id: recoverDb[i]._id,
-                Subject:recoverDb[i].Subject,
-                StartTime: new Date(recoverDb[i].StartTime),
-                EndTime:new Date(recoverDb[i].EndTime)  
-            })
-        }
+            if(recoverDb){
+                for(let i =0; i<recoverDb.length;i++){
+                    finishDb.push({
+                        Id: recoverDb[i]._id,
+                        Subject:recoverDb[i].Subject,
+                        StartTime: new Date(recoverDb[i].StartTime),
+                        EndTime:new Date(recoverDb[i].EndTime)  
+                    })
+                }
+            }
         setData(finishDb)
         }
 
