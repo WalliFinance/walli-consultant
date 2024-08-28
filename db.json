@@ -1,3 +1,41 @@
 {
-    "users":[]
+  "users": [],
+  "schedules": [
+    {
+      "id": "1934",
+      "Subject": "Almoço de parceria",
+      "StartTime": "2024,7,28,15,0",
+      "EndTime": "2024,7,28,17,0"
+    },
+    {
+      "id": "1f04",
+      "Subject": "Almoço de parceria",
+      "StartTime": "2024,7,28,15,0",
+      "EndTime": "2024,7,28,17,0"
+    },
+    {
+      "id": "841d",
+      "Subject": "Almoço de parceria",
+      "StartTime": "2024-08-28T18:00:00.000Z",
+      "EndTime": "2024-08-28T20:00:00.000Z"
+    },
+    {
+      "id": "d4f0",
+      "Subject": "Almoço de parceria",
+      "StartTime": "2024-08-28T18:00:00.000Z",
+      "EndTime": "2024-08-28T20:00:00.000Z"
+    },
+    {
+      "id": "d2e5",
+      "Subject": "Almoço de parceria",
+      "StartTime": "2024-08-28T18:00:00.000Z",
+      "EndTime": "2024-08-28T20:00:00.000Z"
+    },
+    {
+      "id": "6e7b",
+      "Subject": "Almoço de parceria",
+      "StartTime": "2024,7,28,15,0",
+      "EndTime": "2024,7,28,17,0"
+    }
+  ]
 }
