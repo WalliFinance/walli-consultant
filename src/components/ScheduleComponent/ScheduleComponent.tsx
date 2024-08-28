@@ -11,7 +11,7 @@ export default function ScheduleComponents(){
         async function recoverAllSchedulesAndPrint(){
         const recoverDb = await recoverSchedules()
         const finishDb = []
-        for(let i =0; i<recoverDb.length;i++){
+        for(let i =0; i<recoverDb?.length;i++){
             finishDb.push({
                 Id: recoverDb[i]._id,
                 Subject:recoverDb[i].Subject,
