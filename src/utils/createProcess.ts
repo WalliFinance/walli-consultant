@@ -9,7 +9,7 @@ export default async function createProcess(ev:FormEvent,clientName:string,clien
                 const createProcess = await fetch(`http://localhost:3339/process`,{
                     method: "POST",
                     body: JSON.stringify(
-                      {clientBirthday,clientEmail,clientName,clientPhone,processStart:startProcess,houseValue,installments,consultantId:conversedUser._id}
+                      {clientBirthday,clientEmail,clientName,clientPhone,processStart:startProcess,houseValue,installments,consultantId:conversedUser._id,status:'Em andamento'}
                     ),
                     headers:{
                       "Content-Type": "application/json"

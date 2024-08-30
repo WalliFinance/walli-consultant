@@ -159,7 +159,7 @@ $alert:#FFD900;
                     transition: .4s;
                     padding: 12px 24px;
                     font-size: 1.2rem;
-                    width: 200px;
+                    width: max-content;
                     cursor: pointer;
                     display: block;
       
@@ -178,7 +178,7 @@ $alert:#FFD900;
                     text-transform: uppercase;
                 }
     
-                input{
+                input,select{
                     padding: 8px 4px;
                     background-color: $cardbg-inputbg;
                     border: 2px solid $headerbg-menudisable;

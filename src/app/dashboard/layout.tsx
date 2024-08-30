@@ -4,6 +4,7 @@ import Image from "next/image";
 import taskSvg from '@/public/assets/task-svg.svg'
 import processSvg from '@/public/assets/process-svg.svg'
 import expandSvg from '@/public/assets/expand-icon.svg'
+import myProcessSvg from '@/public/assets/myProcess-icon.svg'
 import styles from './layout.module.scss'
 import "./globals.scss";
 import { useEffect, useRef, useState } from "react";
@@ -18,6 +19,7 @@ export default function DashboardLayout({
     
     const [count,setCount] = useState(1)
     const refMenu = useRef<HTMLBodyElement>(null)
+    const refMenu2 = useRef<HTMLBodyElement>(null)
     const refName = useRef<HTMLHeadingElement>(null)
 
     useEffect(()=>{
@@ -45,18 +47,42 @@ export default function DashboardLayout({
     }
 
     function expandMenu(){
+      setCount(count+1)
+      if(count%2 == 0){
+          if(refMenu.current){
+              refMenu.current.style.height = '30px'
+              refMenu.current.style.backgroundColor = '#669BBC'
+              refMenu.current.style.color = '#000000'
+          }
+      } else{
+          if(refMenu.current && refMenu2.current){
+              refMenu2.current.style.height = '30px'
+              refMenu2.current.style.backgroundColor = '#669BBC'
+              refMenu2.current.style.color = '#000000'
+              refMenu.current.style.height = '80px'
+              refMenu.current.style.backgroundColor = '#FFAFCC'
+              refMenu.current.style.color = '#FFFFFF'
+          }
+      }
+  }
+
+
+    function expandMenu2(){
         setCount(count+1)
         if(count%2 == 0){
-            if(refMenu.current){
-                refMenu.current.style.height = '30px'
-                refMenu.current.style.backgroundColor = '#669BBC'
-                refMenu.current.style.color = '#000000'
+            if(refMenu2.current){
+                refMenu2.current.style.height = '30px'
+                refMenu2.current.style.backgroundColor = '#669BBC'
+                refMenu2.current.style.color = '#000000'
             }
         } else{
-            if(refMenu.current){
-                refMenu.current.style.height = '80px'
-                refMenu.current.style.backgroundColor = '#FFAFCC'
-                refMenu.current.style.color = '#FFFFFF'
+            if(refMenu2.current && refMenu.current){
+              refMenu.current.style.height = '30px'
+              refMenu.current.style.backgroundColor = '#669BBC'
+              refMenu.current.style.color = '#000000'
+                refMenu2.current.style.height = '60px'
+                refMenu2.current.style.backgroundColor = '#FFAFCC'
+                refMenu2.current.style.color = '#FFFFFF'
             }
         }
     }
@@ -102,6 +128,31 @@ export default function DashboardLayout({
                         />
                     </div>
                 </ul>
+                </section>
+
+                <section ref={refMenu2}>
+                <article>
+                <h3>Dashboard</h3>
+                <Image
+                width={12}
+                height={12}
+                src={expandSvg}
+                alt="Expand svg icon"
+                onClick={expandMenu2}
+                />
+                </article>
+                <ul>
+                    <div>
+                        <Link href={'/dashboard/myProcess'}><li>Meus processos</li></Link>
+                        <Image
+                        src={myProcessSvg}
+                        width={12}
+                        height={12}
+                        alt="process icon"
+                        />
+                    </div>
+                </ul>
+
                 </section>
 
                 <footer>

@@ -12,6 +12,7 @@ export default async function recoverProcessById(){
         }
     const valuesArray = processFromLocal.map((item)=>Number(item.houseValue))
     const sumOfAllProcess = valuesArray.reduce((acc,cur)=>acc+cur)
-    return sumOfAllProcess
+    const numberWithPoints = `${sumOfAllProcess}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    return numberWithPoints
     }
 }
