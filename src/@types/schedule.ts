@@ -1,7 +1,7 @@
 export type Schedule = {
-    Subject: string,
-    StartTime: string,
-    EndTime: string,
+    subject: string,
+    starttime: string,
+    endtime: string,
     _id:string,
-    ownerId: string
+    ownerid: string
 }

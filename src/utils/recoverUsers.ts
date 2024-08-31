@@ -3,7 +3,8 @@ import { User,Users} from "../@types/user"
 
 export default async function recoverUserByEmail(ev:FormEvent,email:string,password:string){
 ev.preventDefault()
-const getDbUsers = await fetch('http://localhost:3334/users')
+const dbUrl = process.env.NEXT_PUBLIC_API_URL
+const getDbUsers = await fetch(`${dbUrl}`)
 const converseDb:Users[]= await getDbUsers.json()
 const checkEmailExists = converseDb.filter(user=>user.email === email)
 const checkPasswordMatch = checkEmailExists.filter(user=>user.password === password)

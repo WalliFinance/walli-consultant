@@ -2,6 +2,7 @@ import { FormEvent } from "react";
 import { User } from "../@types/user";
 
 export default async function createSchedule(ev:FormEvent,Subject:string,date:Date,StartTime:string,EndTime:string){
+  const dbUrl = process.env.NEXT_PUBLIC_API_URL3
     ev.preventDefault()
     const year = date.getFullYear() 
     const day = date.getDate() + 1
@@ -14,7 +15,7 @@ export default async function createSchedule(ev:FormEvent,Subject:string,date:Da
     if(localUser){
       const converseUser:User = JSON.parse(localUser)
 
-      const createSchedule = await fetch(`http://localhost:3333/schedules`,{
+      const createSchedule = await fetch(`${dbUrl}`,{
         method: "POST",
         body: JSON.stringify(
           {Subject,StartTime:startTimeDate,EndTime:endTimeDate,ownerId:converseUser._id

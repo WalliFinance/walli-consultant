@@ -6,7 +6,6 @@ import styles from './page.module.scss'
 
 export default function MyProcess(){
     const refMainSection = useRef<HTMLBodyElement>(null)
-    
     useEffect(()=>{
         async function insertMyProcess(){
             const myProcessDb = await myProcessFromMyId()
@@ -14,15 +13,15 @@ export default function MyProcess(){
                 for(let i=0; i<myProcessDb?.length;i++){
                     const article = document.createElement('article')
                     const clientName = document.createElement('h3')
-                    clientName.innerText = myProcessDb[i].clientName
+                    clientName.innerText = myProcessDb[i].clientname
                     const houseValue = document.createElement('p')
-                    const converseHouseValue = Number(myProcessDb[i].houseValue)
+                    const converseHouseValue = Number(myProcessDb[i].housevalue)
                     const numberWithPoints = `${converseHouseValue}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
                     houseValue.innerText = `R$ ${numberWithPoints}`
 
                     const button = document.createElement('a')
                     button.innerText = 'Ver mais'
-                    button.href = `/dashboard/myProcess/${myProcessDb[i]._id}`
+                    button.href = `/dashboard/myProcess/${myProcessDb[i].id}`
                     article.append(clientName,houseValue,button)
                     refMainSection.current.append(article)
                 }

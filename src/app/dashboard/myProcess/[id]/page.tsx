@@ -3,7 +3,6 @@
 import getProcessFromId from "@/src/utils/getProcessFromId"
 import { FormEvent, useEffect, useRef, useState } from "react"
 import styles from './page.module.scss'
-import { StepStatus } from "@syncfusion/ej2/navigations"
 
 export default function ProcessPageInfos({params}:any){
     const refClient = useRef<HTMLHeadingElement>(null)
@@ -14,14 +13,15 @@ export default function ProcessPageInfos({params}:any){
 
     useEffect(()=>{
         async function insertProcessInfo() {
-            const myProcess = await getProcessFromId(params.id)
-            const converseHouseValue = Number(myProcess.houseValue)
+            const myProcess:any = await getProcessFromId(params.id)
+            console.log(myProcess[0])
+            const converseHouseValue = Number(myProcess[0].housevalue)
             const numberWithPoints = `${converseHouseValue}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
             if(refClient.current && refValue.current && refClientEmail.current && refClientPhone.current){
-                refClient.current.innerText = myProcess.clientName
+                refClient.current.innerText = myProcess[0].clientname
                 refValue.current.innerText = `Valor do financiamento : R$ ${numberWithPoints}`
-                refClientEmail.current.innerText = `Email do cliente : ${myProcess.clientEmail}`
-                refClientPhone.current.innerText = `Telefone do cliente : ${myProcess.clientPhone}`
+                refClientEmail.current.innerText = `Email do cliente : ${myProcess[0].clientemail}`
+                refClientPhone.current.innerText = `Telefone do cliente : ${myProcess[0].clientphone}`
             }
         }
         insertProcessInfo()
@@ -29,7 +29,8 @@ export default function ProcessPageInfos({params}:any){
 
     async function changeProcessStatus(ev:FormEvent) {
         ev.preventDefault()
-        const updateProcess = await fetch(`http://localhost:3339/process/${params.id}`,{
+        const dbUrl = process.env.NEXT_PUBLIC_API_URL2
+        const updateProcess = await fetch(`${dbUrl}/${params.id}`,{
             method: "PUT",
             body: JSON.stringify(
               {status:status}

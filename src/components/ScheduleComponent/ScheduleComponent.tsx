@@ -15,9 +15,9 @@ export default function ScheduleComponents(){
                 for(let i =0; i<recoverDb.length;i++){
                     finishDb.push({
                         Id: recoverDb[i]._id,
-                        Subject:recoverDb[i].Subject,
-                        StartTime: new Date(recoverDb[i].StartTime),
-                        EndTime:new Date(recoverDb[i].EndTime)  
+                        Subject:recoverDb[i].subject,
+                        StartTime: new Date(recoverDb[i].starttime),
+                        EndTime:new Date(recoverDb[i].endtime)  
                     })
                 }
             }
