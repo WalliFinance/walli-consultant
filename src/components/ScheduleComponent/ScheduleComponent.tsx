@@ -26,7 +26,7 @@ export default function ScheduleComponents(){
 
         recoverAllSchedulesAndPrint()
     }, []);
-
+    
     return(
         <ScheduleComponent 
         width={800}
