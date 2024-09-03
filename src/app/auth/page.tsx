@@ -26,7 +26,7 @@ export default function Login(){
 
         <div>
           <span><Link href={'auth/register'}>Registrar-se</Link></span>
-          <span>Recuperar senha</span>
+          <span><Link href={'auth/recover'}>Recuperar senha</Link></span>
         </div>
 
         <button>Login</button>

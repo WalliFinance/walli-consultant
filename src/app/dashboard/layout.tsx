@@ -156,7 +156,7 @@ export default function DashboardLayout({
                 </section>
 
                 <footer>
-                    <span>Configurações</span>
+                    <span><Link href={'/dashboard/configurationspage'}>Configurações</Link></span>
                     <span onClick={exitAplication}>Sair</span>
                 </footer>
             </div>
@@ -165,7 +165,6 @@ export default function DashboardLayout({
         <article className={styles.childrenContainer}>
         {children}
         </article>
-
     </main>
       </body>
     </html>
