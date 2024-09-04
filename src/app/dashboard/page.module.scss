@@ -45,11 +45,78 @@ $alert:#FFD900;
 
 .main{
     display: flex;
-    gap: 200px;
+    gap: 60px;
+    position: relative;
+
+    .infosContainer{
+      display: none;
+      background-color: $headerbg-menudisable;
+      border: 4px solid $cardborder;
+      border-radius: 12px;
+      padding: 12px;
+      position: absolute;
+      z-index: 5000;
+      left: 240px;
+      top: 20px;
+
+      p{
+        color: $border-titles;
+        font-family: 'Textts';
+        width: 300px;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+    }
+
+    .infosContainer2{
+      display: none;
+      background-color: $headerbg-menudisable;
+      border: 4px solid $cardborder;
+      border-radius: 12px;
+      padding: 12px;
+      position: absolute;
+      z-index: 5000;
+      left: 240px;
+      top: 260px;
+
+      p{
+        color: $border-titles;
+        font-family: 'Textts';
+        width: 300px;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+    }
+
+      .metrics{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        article{
+          position: relative;
+            span{
+              font-family: 'Titles';
+              color: $border-titles;
+              position: absolute;
+              right: 12px;
+              background-color: $cardborder;
+              padding: 2px 8px;
+              border-radius: 50%;
+              cursor: pointer;
+            }
+         
+        }
+        article:nth-child(2){
+          width: 250px;
+          height: 200px;
+        }
+      }
 
         article{
             background-color: $cardbg-inputbg;
             height: 200px;
+            position: relative;
             display: flex;
             flex-direction: column;
             gap: 60px;
@@ -63,6 +130,8 @@ $alert:#FFD900;
                 color: $border-titles;
                 font-family: 'Titles';
             }
+
+         
 
             p{
             font-family: 'Titles';

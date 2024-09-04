@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
 import { User } from '../@types/user';
-export default async function createProcess(ev:FormEvent,clientName:string,clientBirthday:Date,startProcess:Date,houseValue:string,installments:string,clientEmail:string,clientPhone:string) {
+export default async function createProcess(ev:FormEvent,clientName:string,clientBirthday:Date,startProcess:Date,houseValue:string,financedValue:string,installments:string,clientEmail:string,clientPhone:string) {
     const dbUrl = process.env.NEXT_PUBLIC_API_URL2
     ev.preventDefault()
     if(clientName!=='' && clientBirthday && startProcess && houseValue!=='' && installments!=='' && clientEmail!=='' && clientPhone!==''){
@@ -10,7 +10,7 @@ export default async function createProcess(ev:FormEvent,clientName:string,clien
                 const createProcess = await fetch(`${dbUrl}`,{
                     method: "POST",
                     body: JSON.stringify(
-                      {clientBirthday,clientEmail,clientName,clientPhone,processStart:startProcess,houseValue,installments,consultantId:conversedUser._id,status:'Em andamento'}
+                      {clientBirthday,clientEmail,clientName,clientPhone,processStart:startProcess,houseValue,financedValue,installments,consultantId:conversedUser._id,status:'Em andamento'}
                     ),
                     headers:{
                       "Content-Type": "application/json"

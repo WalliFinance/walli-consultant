@@ -8,13 +8,14 @@ export default function ProcessPage(){
     const [clientBirthday,setClientBirthday] = useState(new Date())
     const [startProcess,setStartProcess] = useState(new Date())
     const [houseValue,setHouseValue] = useState('')
+    const [financedValue,setFinancedValue] = useState('')
     const [installments,setInstallments] = useState('')
     const [clientEmail,setClientEmail] = useState('')
     const [clientPhone,setClientPhone] = useState('')
     return(
         <>
             <h1>Processo</h1>
-            <form onSubmit={(ev)=>createProcess(ev,clientName,clientBirthday,startProcess,houseValue,installments,clientEmail,clientPhone)}>
+            <form onSubmit={(ev)=>createProcess(ev,clientName,clientBirthday,startProcess,houseValue,financedValue,installments,clientEmail,clientPhone)}>
                 <label htmlFor="clientName">Nome do proponente</label>
                 <input 
                 type="text" 
@@ -42,6 +43,13 @@ export default function ProcessPage(){
                 id="houseValue"
                 name="houseValue"
                 onChange={(ev)=>setHouseValue(ev.currentTarget.value)}
+                />
+                <label htmlFor="financedValue">Valor financiado</label>
+                <input 
+                type="text"
+                id="financedValue"
+                name="financedValue"
+                onChange={(ev)=>setFinancedValue(ev.currentTarget.value)}
                 />
                 <label htmlFor="installments">Numero de parcelas</label>
                 <input 

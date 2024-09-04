@@ -5,6 +5,7 @@ import taskSvg from '@/public/assets/task-svg.svg'
 import processSvg from '@/public/assets/process-svg.svg'
 import expandSvg from '@/public/assets/expand-icon.svg'
 import myProcessSvg from '@/public/assets/myProcess-icon.svg'
+import homeSvg from '@/public/assets/home_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).svg'
 import styles from './layout.module.scss'
 import "./globals.scss";
 import { useEffect, useRef, useState } from "react";
@@ -80,7 +81,7 @@ export default function DashboardLayout({
               refMenu.current.style.height = '30px'
               refMenu.current.style.backgroundColor = '#669BBC'
               refMenu.current.style.color = '#000000'
-                refMenu2.current.style.height = '60px'
+                refMenu2.current.style.height = '80px'
                 refMenu2.current.style.backgroundColor = '#FFAFCC'
                 refMenu2.current.style.color = '#FFFFFF'
             }
@@ -140,8 +141,19 @@ export default function DashboardLayout({
                 alt="Expand svg icon"
                 onClick={expandMenu2}
                 />
+                
                 </article>
                 <ul>
+                    <div>
+                        <Link href={'/dashboard/'}><li>Home</li></Link>
+                        <Image
+                        src={homeSvg}
+                        width={12}
+                        height={12}
+                        alt="home icon"
+                        />
+                    </div>
+
                     <div>
                         <Link href={'/dashboard/myProcess'}><li>Meus processos</li></Link>
                         <Image

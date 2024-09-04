@@ -5,6 +5,7 @@ export type ProcessInDb = {
     clientphone: string,
     clientbirthday: string,
     housevalue: string,
+    financedvalue:string,
     id:string
 }
 
