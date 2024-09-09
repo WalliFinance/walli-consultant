@@ -12,7 +12,7 @@ export default function RootLayout({
       <body>
         <article className={styles.form}>
           <div className={styles.firstCollumn}>
-            <h1>Wt</h1>
+            <h1 tabIndex={1}>Wt</h1>
           </div>
           <div className={styles.secondCollumn}>
             {children}

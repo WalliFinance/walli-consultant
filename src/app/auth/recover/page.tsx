@@ -64,8 +64,11 @@ export default function RecoverPage(){
                 type="text" 
                 value={email}
                 onChange={(ev)=>setEmail(ev.currentTarget.value)}
+                aria-label="Input de email cadastrado"
+                tabIndex={2}
                 />
-                <button>Verificar</button>
+                <button aria-label="Botão para verificar se email é cadastrado na plataforma"
+                tabIndex={3}>Verificar</button>
             </form>
             
             <form onSubmit={(ev)=>changePassword(ev)} ref={refSecondForm} className={styles.form}>
@@ -74,6 +77,8 @@ export default function RecoverPage(){
             type="password" 
             value={password}
             onChange={(ev)=>setPassword(ev.currentTarget.value)}
+            aria-label="Input de nova senha"
+            tabIndex={2}
             />
 
             <label htmlFor="confirmPassword">Confirmação da senha</label>
@@ -81,8 +86,11 @@ export default function RecoverPage(){
             type="password" 
             value={confirmPassword}
             onChange={(ev)=>setConfirmPassword(ev.currentTarget.value)}
+            aria-label="Input de confirmação de nova senha"
+            tabIndex={3}
             />
-            <button>Trocar senha</button>
+            <button aria-label="Botão para confirmação de troca de senha"
+            tabIndex={4}>Trocar senha</button>
             </form>
         </>
     )

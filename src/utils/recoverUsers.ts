@@ -1,8 +1,7 @@
 import { FormEvent } from 'react';
 import { User,Users} from "../@types/user"
 
-export default async function recoverUserByEmail(ev:FormEvent,email:string,password:string){
-ev.preventDefault()
+export default async function recoverUserByEmail(email:string,password:string){
 const dbUrl = process.env.NEXT_PUBLIC_API_URL
 const getDbUsers = await fetch(`${dbUrl}`)
 const converseDb:Users[]= await getDbUsers.json()

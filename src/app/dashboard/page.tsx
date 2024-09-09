@@ -60,18 +60,18 @@ export default function HomeDashboard(){
     <section className={styles.main}>
         <div className={styles.metrics}>
         <article>
-          <h3>Receita</h3>
+          <h3 tabIndex={10}>Receita</h3>
           <span onMouseEnter={showFirstHintContainer} 
                 onMouseLeave={dontShowFirstHintContainer}>?</span>
-          <p ref={refBalance}></p>
+          <p ref={refBalance} tabIndex={11}></p>
         </article>
 
         <article>
-          <h3>Comissão</h3>
+          <h3 tabIndex={12}>Comissão</h3>
           <span onMouseEnter={showSecondHintContainer}
                 onMouseLeave={dontShowSecondHintContainer}
           >?</span>
-          <p ref={refComission}></p>
+          <p ref={refComission} tabIndex={13}></p>
         </article>
         </div>
        

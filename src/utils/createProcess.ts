@@ -1,8 +1,6 @@
-import { FormEvent } from 'react';
 import { User } from '../@types/user';
-export default async function createProcess(ev:FormEvent,clientName:string,clientBirthday:Date,startProcess:Date,houseValue:string,financedValue:string,installments:string,clientEmail:string,clientPhone:string) {
+export default async function createProcess(clientName:string,clientBirthday:Date,startProcess:Date,houseValue:string,financedValue:string,installments:string,clientEmail:string,clientPhone:string) {
     const dbUrl = process.env.NEXT_PUBLIC_API_URL2
-    ev.preventDefault()
     if(clientName!=='' && clientBirthday && startProcess && houseValue!=='' && installments!=='' && clientEmail!=='' && clientPhone!==''){
         const localUser = localStorage.getItem('Usuario logado')
             if(localUser){

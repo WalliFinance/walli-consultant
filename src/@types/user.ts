@@ -14,3 +14,10 @@ export type Users = {
     _id: string,
     phone: string
 }
+
+export type UserLogin = {
+    email:string,
+    password:string
+}
+
+

@@ -47,25 +47,27 @@ export default function ProcessPageInfos({params}:any){
 
     return(
         <main className={styles.main}>
-            <h1 ref={refClient}></h1>
-            <p ref={refValue}></p>
-            <p ref={refClientEmail}></p>
-            <p ref={refClientPhone}></p>
+            <h1 ref={refClient} tabIndex={10}></h1>
+            <p ref={refValue} tabIndex={11}></p>
+            <p ref={refClientEmail} tabIndex={12}></p>
+            <p ref={refClientPhone} tabIndex={13}></p>
 
             <form onSubmit={(ev)=>changeProcessStatus(ev)} >
                 <label htmlFor="status">Alterar status</label>
                 <select 
                 name="status" id="status"
                 onChange={(ev)=>setStatus(ev.currentTarget.value)}
+                tabIndex={15}
+                aria-label="Select para alterar o status do pedido"
                 >
-                    <option value="">{status}</option>
-                    <option value="Em andamento">Em andamento</option>
-                    <option value="Analise bancaria">Analise bancaria</option>
-                    <option value="Envio de documentos">Envio de documentos</option>
-                    <option value="Assinatura de contrato">Assinatura de contrato</option>
+                    <option value="" tabIndex={16}>{status}</option>
+                    <option value="Em andamento" tabIndex={17}>Em andamento</option>
+                    <option value="Analise bancaria" tabIndex={18}>Analise bancaria</option>
+                    <option value="Envio de documentos" tabIndex={19}>Envio de documentos</option>
+                    <option value="Assinatura de contrato" tabIndex={20}>Assinatura de contrato</option>
                 </select>
 
-                <button>Alterar status</button>
+                <button tabIndex={21} aria-label="Botão para alterar status do pedido">Alterar status</button>
             </form>
         </main>
     )

@@ -1,7 +1,6 @@
 import { FormEvent } from "react"
 
-export default async function createUser(ev:FormEvent,name:string,email:string,phone:string,password:string,confirmPassword:string,birthday:Date){
-    ev.preventDefault()
+export default async function createUser(name:string,email:string,phone:string,password:string,confirmPassword:string,birthday:Date){
     const dbUrl = process.env.NEXT_PUBLIC_API_URL
     if(name!=='' && email!=='' && phone!=='' && password!=='' && confirmPassword!=='' && birthday && password === confirmPassword){
         const createUser = await fetch(`${dbUrl}`,{

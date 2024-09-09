@@ -1,9 +1,7 @@
-import { FormEvent } from "react";
 import { User } from "../@types/user";
 
-export default async function createSchedule(ev:FormEvent,Subject:string,date:Date,StartTime:string,EndTime:string){
+export default async function createSchedule(Subject:string,date:Date,StartTime:string,EndTime:string){
   const dbUrl = process.env.NEXT_PUBLIC_API_URL3
-    ev.preventDefault()
     const year = date.getFullYear() 
     const day = date.getDate() + 1
     const month = date.getMonth()

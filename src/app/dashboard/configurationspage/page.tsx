@@ -11,7 +11,9 @@ export default function ConfigurationPage(){
     ev.preventDefault()
     const dbUrl = process.env.NEXT_PUBLIC_API_URL
     const userLocal = localStorage.getItem('Usuario logado')
-    if(password!==confirmPassword){
+    if(password ==='' || confirmPassword==='' ){
+        alert('Preencha todos os campos')
+    }else if(password!==confirmPassword){
         alert('Senhas não coincidem')
     }else{
         if(userLocal){
@@ -51,6 +53,8 @@ export default function ConfigurationPage(){
                 name="password"
                 value={password}
                 onChange={(ev)=>setPassword(ev.currentTarget.value)}
+                tabIndex={10}
+                aria-label="Input de senha"
                 />
                 <label htmlFor="confirmPassword">Confirmação de senha</label>
                 <input 
@@ -59,9 +63,13 @@ export default function ConfigurationPage(){
                 name="confirmPassword"
                 value={confirmPassword}
                 onChange={(ev)=>setConfirmPassword(ev.currentTarget.value)}
+                tabIndex={11}
+                aria-label="Input de confirmação de senha"
                 />
 
-                <button>Trocar senha</button>
+                <button  
+                tabIndex={12}
+                aria-label="Botão de confirmação de troca de senha">Trocar senha</button>
             </form>
         </>
     )

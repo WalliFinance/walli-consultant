@@ -92,7 +92,7 @@ export default function DashboardLayout({
     <html lang="en">
       <body className={styles.body}>
         <header>
-          <Link href={'/dashboard'}><h1>Logo</h1></Link>
+          <Link href={'/dashboard'}><h1 tabIndex={1}>Logo</h1></Link>
         </header>
       <main className={styles.main}>
         <aside>
@@ -107,11 +107,14 @@ export default function DashboardLayout({
                 src={expandSvg}
                 alt="Expand svg icon"
                 onClick={expandMenu}
+                tabIndex={2}
+                aria-label="Botão que expande o menu de ferramentas da plataforma"
+                role="button"
                 />
                 </article>
                 <ul>
                     <div>
-                        <Link href={'/dashboard/process'}><li>Adicionar processo</li></Link>
+                        <Link href={'/dashboard/process'} tabIndex={3}><li>Adicionar processo</li></Link>
                         <Image
                         src={processSvg}
                         width={12}
@@ -120,7 +123,7 @@ export default function DashboardLayout({
                         />
                     </div>
                     <div>
-                        <Link href={'/dashboard/schedule'}><li>Adicionar compromisso</li></Link>
+                        <Link href={'/dashboard/schedule'} tabIndex={4}><li>Adicionar compromisso</li></Link>
                         <Image
                         src={taskSvg}
                         width={12}
@@ -140,12 +143,15 @@ export default function DashboardLayout({
                 src={expandSvg}
                 alt="Expand svg icon"
                 onClick={expandMenu2}
+                tabIndex={5}
+                aria-label="Botão que expande o menu de dashboards da plataforma"
+                role="button"
                 />
                 
                 </article>
                 <ul>
                     <div>
-                        <Link href={'/dashboard/'}><li>Home</li></Link>
+                        <Link href={'/dashboard/'} tabIndex={6}><li>Home</li></Link>
                         <Image
                         src={homeSvg}
                         width={12}
@@ -155,7 +161,7 @@ export default function DashboardLayout({
                     </div>
 
                     <div>
-                        <Link href={'/dashboard/myProcess'}><li>Meus processos</li></Link>
+                        <Link href={'/dashboard/myProcess'} tabIndex={7}><li>Meus processos</li></Link>
                         <Image
                         src={myProcessSvg}
                         width={12}
@@ -168,8 +174,8 @@ export default function DashboardLayout({
                 </section>
 
                 <footer>
-                    <span><Link href={'/dashboard/configurationspage'}>Configurações</Link></span>
-                    <span onClick={exitAplication}>Sair</span>
+                    <span tabIndex={8}><Link href={'/dashboard/configurationspage'}>Configurações</Link></span>
+                    <span onClick={exitAplication} tabIndex={9}>Sair</span>
                 </footer>
             </div>
         </aside>

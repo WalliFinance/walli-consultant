@@ -77,6 +77,14 @@ $alert:#FFD900;
         align-items: center;
             
          form{
+          p{
+            font-size: 0.825rem;
+            font-family: 'Lis-S';
+            color: $taskday-warning;
+            margin: 4px 0px;
+          }
+
+
             label{
                 font-size: 1.3rem;
                 font-family: 'Labels';

@@ -155,6 +155,13 @@ $alert:#FFD900;
             }
 
             form{  
+                p{
+                    font-size: 0.825rem;
+                    font-family: 'Lis-S';
+                    color: $taskday-warning;
+                    margin: 4px 0px;
+                  }
+        
                 button{
                     background-color: $bg-button;
                     border: 2px solid $active-menu-and-tooltip-border;
